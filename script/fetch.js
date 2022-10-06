@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
               cardsDiv.classList.add("card");
           let imgDiv = document.createElement("div");
             imgDiv.classList.add("image")
+            let div = document.createElement("div")
             let imgPok = document.createElement("img");
               imgPok.classList.add("imagen");
 
@@ -158,12 +159,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
           subElements.appendChild(pesoDiv);
 
           imgDiv.appendChild(imgPok);
+          imgDiv.appendChild(div)
           nombresDiv.appendChild(nombresPok);
           habilidadesDiv.appendChild(habilidadesPok);
           pesoDiv.appendChild(pesoPok);
 
           subElements.classList.add("hidden");
           nombresDiv.classList.add("hidden");
+          firstElements.classList.add("hidden");
 
           cardsDiv.addEventListener("click", entryData);
           back.addEventListener("click", backPrev);
@@ -190,6 +193,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
                     producto.classList.remove("hidden");
 
                     cardsConteiner.classList.add("newContainer");
+                    firstElements.classList.remove("hidden");
                     subElements.classList.remove("hidden");
                     nombresDiv.classList.remove("hidden");
                   }, 1000);
@@ -205,6 +209,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
             cardsDiv.classList.remove("hidden");
             cardsDiv.classList.add("card");
+            firstElements.classList.add("hidden");
             subElements.classList.add("hidden");
             cardsConteiner.classList.remove("newContainer");
             cardsConteiner.classList.add("contenedor-cards");
@@ -214,9 +219,8 @@ document.addEventListener("DOMContentLoaded", (e) => {
             navbar.classList.remove("visible");
             back.classList.add("hidden");
 
-            
-            btnPrev.classList.add("visible");
-            btnNext.classList.add("visible");
+            btnPrev.classList.remove("visible");
+            btnNext.classList.remove("visible");
           }
         });
     });
